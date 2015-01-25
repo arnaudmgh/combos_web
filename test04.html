@@ -56,11 +56,6 @@
                       svg.selectAll(".bigrect").remove();
                       svg.append("text").attr("x", thi.attr("x"))
 		                .attr("y", thi.attr("y"))
-		                //.text("r="+d)
-// 		                .text(d["Drug1"]+" --- "+d["Drug2"]+" ("+d["n.syn"]+")")
-//                       svg.append("text").attr("x", thi.attr("y"))
-// 		                .attr("y", thi.attr("x"))
-		                //.text("r="+d)
 		                .text(d["Drug1"]+" --- "+d["Drug2"]+" ("+d["n.syn"]+")")
                       d3.select("#pcombo").html(d["Drug1"]+" ("+d["Drug1.target"]+") "+" --- "+d["Drug2"]+" ("+d["Drug2.target"]+") "+".<br> "+d["n.syn"]+
                                                 " cell lines showed synergy.<br> Combo specificity score: "+d["n.syn.score"])
@@ -71,30 +66,6 @@
                      .attr("height", 9).attr("width", 9).classed({'bigrect':true});
 
                     })
-//                  .on("mouseover", function(d) {
-//                      d3.select("svg").append("rect")
-//                      .attr("x", d3.select(this).attr("x") - 2)
-//                      .attr("y", d3.select(this).attr("y") - 2)
-//                      .attr("fill-opacity", "0").attr("stroke", "black").attr("stroke-width", "3")
-//                      .attr("height", 9).attr("width", 9).classed({'bigrect':true});
-// //                      d3.select(this).attr("height", 11).attr("width", 11)
-// //                        .attr("x", d3.select(this).attr("x") - 3)
-// //                        .attr("y", d3.select(this).attr("y") - 3)
-//                      d3.select(this).moveToFront;
-//                  })
-//                 .on("mouseout", function(){
-//                     d3.select(".bigrect").remove();
-
-//                     //console.log("x="+thi.attr("x"))
-//                     //console.log("y="+thi.attr("y"))
-//                     //thi.attr("height", 5).attr("width", 5)
-//                     //   .attr("x", Number(thi.attr("x")) - 3)
-//                      //  .attr("y", Number(thi.attr("y")) - 3)
-//                     //console.log("x after:"+thi.attr("x"))
-//                     //console.log("y after:"+thi.attr("y"))
-
-//                  })
-
 
 
                ;
@@ -109,20 +80,9 @@
            d3.csv("combo_all_combos.csv", function(error, cdat) {
                //console.log(cdat[0]);
                bla = cdat.filter(function(d) {return (d["Drug1"]=="PLX4720" && d["Drug2"]=="17-AAG");}); // 17-AAG
-               //console.log(bla);
                console.log(cdatd1.push(cdat));
            });
-           //console.log();
            console.log("getting there");
-           //d3.selectAll("svg").selectAll(".datarect").attr("fill", "black");
-
-           //svg.selectAll("rect").on("click", function(d) {d3.select(this).attr("fill", "blue")})
-//            var cdatd = [{"Drug1.num": 23, "Drug2.num": 12}, {"Drug1.num": 3, "Drug2.num": 2}]
-//            var cdatt = cdat.slice(0, 2);
-//            console.log(cdatd);
-//            console.log("cdatt:");
-//            console.log(cdatt);
-           //console.log(mypath[0][1]);
        </script>
 
     </body>
